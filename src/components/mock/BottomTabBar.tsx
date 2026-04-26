@@ -16,7 +16,7 @@ export default function BottomTabBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center justify-around bg-white border-t border-line py-1.5 shrink-0">
+    <nav className="flex items-center justify-around bg-white border-t border-line py-1.5 shrink-0 lg:hidden">
       {tabs.map((tab) => {
         const active = pathname.startsWith(tab.href);
         const Icon = tab.icon;

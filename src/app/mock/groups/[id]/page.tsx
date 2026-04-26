@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Calendar, MapPin } from "lucide-react";
-import StatusBar from "@/components/mock/StatusBar";
 import BottomTabBar from "@/components/mock/BottomTabBar";
 import BackHeader from "@/components/mock/BackHeader";
 import Avatar from "@/components/mock/Avatar";
@@ -29,16 +28,15 @@ export default async function GroupDetailPage({
 
   return (
     <>
-      <StatusBar />
       <BackHeader
         title={group.name}
         backHref={festival ? `/mock/festivals/${festival.id}` : "/mock/festivals"}
       />
 
       <div className="flex-1 overflow-y-auto">
-        <div className="px-4 pt-4 pb-4">
+        <div className="px-4 lg:px-8 pt-4 lg:pt-6 pb-4 max-w-2xl">
           {/* Group name & tags */}
-          <h2 className="text-lg font-bold text-ink mb-2">{group.name}</h2>
+          <h2 className="text-lg lg:text-xl font-bold text-ink mb-2">{group.name}</h2>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {group.tags.map((tag) => (
               <Badge key={tag} label={tag} variant="coral" />
@@ -49,22 +47,22 @@ export default async function GroupDetailPage({
           {festival && (
             <Link
               href={`/mock/festivals/${festival.id}`}
-              className="flex gap-3 p-3 rounded-xl bg-cream border border-line mb-4 no-underline"
+              className="flex gap-3 p-3 lg:p-4 rounded-xl bg-cream border border-line mb-4 no-underline hover:border-coral/30 transition-colors"
             >
               <img
                 src={festival.image}
                 alt={festival.title}
-                className="w-16 h-16 rounded-lg object-cover shrink-0"
+                className="w-16 h-16 lg:w-20 lg:h-20 rounded-lg object-cover shrink-0"
               />
               <div className="min-w-0">
-                <p className="text-xs font-bold text-ink truncate">
+                <p className="text-xs lg:text-sm font-bold text-ink truncate">
                   {festival.title}
                 </p>
-                <p className="text-[11px] text-ink-mute flex items-center gap-1 mt-0.5">
+                <p className="text-[11px] lg:text-xs text-ink-mute flex items-center gap-1 mt-0.5">
                   <Calendar size={11} strokeWidth={2} />
                   {festival.date}
                 </p>
-                <p className="text-[11px] text-ink-mute flex items-center gap-1 mt-0.5">
+                <p className="text-[11px] lg:text-xs text-ink-mute flex items-center gap-1 mt-0.5">
                   <MapPin size={11} strokeWidth={2} />
                   {festival.location}
                 </p>
@@ -73,14 +71,14 @@ export default async function GroupDetailPage({
           )}
 
           {/* Description */}
-          <p className="text-sm text-ink-soft leading-relaxed mb-5">
+          <p className="text-sm lg:text-base text-ink-soft leading-relaxed mb-5">
             {group.description}
           </p>
 
           {/* Organizer */}
           {organizer && (
             <div className="mb-5">
-              <h3 className="text-xs font-bold text-ink-mute mb-2">
+              <h3 className="text-xs lg:text-sm font-bold text-ink-mute mb-2">
                 主催者
               </h3>
               <div className="flex items-center gap-3">
@@ -97,10 +95,10 @@ export default async function GroupDetailPage({
 
           {/* Members */}
           <div className="mb-6">
-            <h3 className="text-xs font-bold text-ink-mute mb-2">
+            <h3 className="text-xs lg:text-sm font-bold text-ink-mute mb-2">
               メンバー ({group.memberIds.length}/{group.maxMembers})
             </h3>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 lg:gap-6">
               {members.map(
                 (user) =>
                   user && (
@@ -128,7 +126,7 @@ export default async function GroupDetailPage({
           </div>
 
           {/* CTA */}
-          <button className="btn btn-primary w-full justify-center text-sm">
+          <button className="btn btn-primary w-full lg:w-auto justify-center text-sm">
             このグループに参加する
           </button>
         </div>

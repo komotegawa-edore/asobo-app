@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ChevronLeft, Heart, MapPin, Calendar, Ticket, Users } from "lucide-react";
-import StatusBar from "@/components/mock/StatusBar";
 import BottomTabBar from "@/components/mock/BottomTabBar";
 import MemberAvatarStack from "@/components/mock/MemberAvatarStack";
 import GroupCard from "@/components/mock/GroupCard";
@@ -24,16 +23,15 @@ export default async function FestivalDetailPage({
 
   return (
     <>
-      <StatusBar />
       {/* Hero image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 lg:h-72 overflow-hidden shrink-0">
         <img
           src={festival.imageLarge}
           alt={festival.title}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-        <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+        <div className="absolute top-3 left-3 right-3 lg:top-5 lg:left-5 lg:right-5 flex items-center justify-between">
           <Link
             href="/mock/festivals"
             className="w-9 h-9 rounded-full bg-white/80 backdrop-blur flex items-center justify-center no-underline"
@@ -48,23 +46,23 @@ export default async function FestivalDetailPage({
 
       {/* Content */}
       <div className="flex-1 overflow-y-auto">
-        <div className="px-4 pt-4 pb-3">
-          <h2 className="text-lg font-bold text-ink mb-2">{festival.title}</h2>
+        <div className="px-4 lg:px-8 pt-4 lg:pt-6 pb-4 max-w-2xl">
+          <h2 className="text-lg lg:text-2xl font-bold text-ink mb-2">{festival.title}</h2>
           <div className="space-y-1.5 mb-3">
             <div className="flex items-center gap-1.5 text-sm text-ink-soft">
-              <MapPin size={15} strokeWidth={2} className="text-coral" />
+              <MapPin size={15} strokeWidth={2} className="text-coral shrink-0" />
               {festival.location}
             </div>
             <div className="flex items-center gap-1.5 text-sm text-ink-soft">
-              <Calendar size={15} strokeWidth={2} className="text-coral" />
+              <Calendar size={15} strokeWidth={2} className="text-coral shrink-0" />
               {festival.date}
             </div>
             <div className="flex items-center gap-1.5 text-sm text-ink-soft">
-              <Ticket size={15} strokeWidth={2} className="text-coral" />
+              <Ticket size={15} strokeWidth={2} className="text-coral shrink-0" />
               {festival.price}
             </div>
           </div>
-          <p className="text-sm text-ink-soft leading-relaxed mb-4">
+          <p className="text-sm lg:text-base text-ink-soft leading-relaxed mb-4">
             {festival.description}
           </p>
 
@@ -78,18 +76,18 @@ export default async function FestivalDetailPage({
           </div>
 
           {/* CTA */}
-          <button className="btn btn-primary w-full justify-center text-sm mb-6">
+          <button className="btn btn-primary w-full lg:w-auto justify-center text-sm mb-6">
             グループを探す
           </button>
 
           {/* Artists */}
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-ink mb-2">出演アーティスト</h3>
+            <h3 className="text-sm lg:text-base font-bold text-ink mb-2">出演アーティスト</h3>
             <div className="flex flex-wrap gap-2">
               {festival.artists.map((artist) => (
                 <span
                   key={artist}
-                  className="px-3 py-1.5 bg-cream rounded-full text-xs font-medium text-ink-soft"
+                  className="px-3 py-1.5 bg-cream rounded-full text-xs lg:text-sm font-medium text-ink-soft"
                 >
                   {artist}
                 </span>
@@ -100,10 +98,10 @@ export default async function FestivalDetailPage({
           {/* Groups */}
           {groups.length > 0 && (
             <div className="mb-4">
-              <h3 className="text-sm font-bold text-ink mb-2">
+              <h3 className="text-sm lg:text-base font-bold text-ink mb-2">
                 このフェスのグループ
               </h3>
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {groups.map((g) => (
                   <GroupCard
                     key={g.id}

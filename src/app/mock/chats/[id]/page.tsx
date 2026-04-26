@@ -1,6 +1,5 @@
 import { Send, ImageIcon, ChevronLeft, Users } from "lucide-react";
 import Link from "next/link";
-import StatusBar from "@/components/mock/StatusBar";
 import ChatBubble from "@/components/mock/ChatBubble";
 import { chatMessages } from "@/data/mock/chats";
 import { groups } from "@/data/mock/groups";
@@ -23,9 +22,8 @@ export default async function ChatRoomPage({
 
   return (
     <>
-      <StatusBar />
-      {/* Header - no bottom tab */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-line shrink-0">
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 lg:px-6 py-3 border-b border-line shrink-0">
         <Link
           href="/mock/chats"
           className="flex items-center gap-0.5 text-ink-soft no-underline"
@@ -34,7 +32,7 @@ export default async function ChatRoomPage({
           <span className="text-sm">戻る</span>
         </Link>
         <div className="text-center">
-          <h3 className="text-sm font-bold text-ink">{group.name}</h3>
+          <h3 className="text-sm lg:text-base font-bold text-ink">{group.name}</h3>
           <span className="text-[11px] text-ink-mute flex items-center justify-center gap-0.5">
             <Users size={11} strokeWidth={2} />
             {group.memberIds.length}人のメンバー
@@ -44,33 +42,37 @@ export default async function ChatRoomPage({
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 py-4 bg-white">
-        {messages.map((msg) => {
-          const user = getUserById(msg.senderId);
-          return (
-            <ChatBubble
-              key={msg.id}
-              text={msg.text}
-              time={msg.time}
-              senderName={user?.name ?? ""}
-              senderAvatar={user?.avatar ?? ""}
-              isMe={msg.senderId === "me"}
-            />
-          );
-        })}
+      <div className="flex-1 overflow-y-auto px-4 lg:px-8 py-4 bg-white">
+        <div className="max-w-2xl mx-auto">
+          {messages.map((msg) => {
+            const user = getUserById(msg.senderId);
+            return (
+              <ChatBubble
+                key={msg.id}
+                text={msg.text}
+                time={msg.time}
+                senderName={user?.name ?? ""}
+                senderAvatar={user?.avatar ?? ""}
+                isMe={msg.senderId === "me"}
+              />
+            );
+          })}
+        </div>
       </div>
 
       {/* Input bar (decorative) */}
-      <div className="flex items-center gap-2 px-4 py-3 border-t border-line bg-white shrink-0">
-        <button className="w-9 h-9 rounded-full bg-cream flex items-center justify-center shrink-0">
-          <ImageIcon size={18} className="text-ink-mute" strokeWidth={2} />
-        </button>
-        <div className="flex-1 bg-cream rounded-full px-4 py-2">
-          <span className="text-sm text-ink-mute">メッセージを入力</span>
+      <div className="flex items-center gap-2 px-4 lg:px-8 py-3 border-t border-line bg-white shrink-0">
+        <div className="max-w-2xl mx-auto flex items-center gap-2 w-full">
+          <button className="w-9 h-9 rounded-full bg-cream flex items-center justify-center shrink-0">
+            <ImageIcon size={18} className="text-ink-mute" strokeWidth={2} />
+          </button>
+          <div className="flex-1 bg-cream rounded-full px-4 py-2">
+            <span className="text-sm text-ink-mute">メッセージを入力</span>
+          </div>
+          <button className="w-9 h-9 rounded-full bg-coral flex items-center justify-center shrink-0">
+            <Send size={16} className="text-white" strokeWidth={2} />
+          </button>
         </div>
-        <button className="w-9 h-9 rounded-full bg-coral flex items-center justify-center shrink-0">
-          <Send size={16} className="text-white" strokeWidth={2} />
-        </button>
       </div>
     </>
   );
