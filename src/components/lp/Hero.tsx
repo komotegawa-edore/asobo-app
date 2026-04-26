@@ -67,10 +67,10 @@ export default function Hero() {
             20〜30代の社会人向け / ユーザー投稿型でスタート
           </span>
           <div className="flex gap-3 sm:gap-4 flex-wrap justify-center lg:justify-start">
-            <a href="#cta" className="btn btn-primary !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
+            <a href="/mock/festivals" className="btn btn-primary !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
               無料ではじめる<span className="arr">→</span>
             </a>
-            <a href="#genres" className="btn btn-outline !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
+            <a href="/mock/festivals" className="btn btn-outline !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
               イベントを見てみる<span className="arr">→</span>
             </a>
           </div>

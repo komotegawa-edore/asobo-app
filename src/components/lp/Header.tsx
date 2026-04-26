@@ -36,7 +36,7 @@ export default function Header() {
             </a>
           </li>
         </ul>
-        <a href="#cta" className="btn btn-primary text-sm">
+        <a href="/mock/festivals" className="btn btn-primary text-sm">
           無料ではじめる
         </a>
       </div>

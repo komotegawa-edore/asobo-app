@@ -29,10 +29,10 @@ export default function CTA() {
         </h2>
         <p className="text-sm sm:text-base opacity-95 mb-8">ASOBOで、最高の週末を。</p>
         <div className="flex gap-3 sm:gap-4 flex-wrap justify-center">
-          <a href="#" className="btn btn-primary !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
+          <a href="/mock/festivals" className="btn btn-primary !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
             無料ではじめる<span className="arr">→</span>
           </a>
-          <a href="#" className="btn btn-outline !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
+          <a href="/mock/festivals" className="btn btn-outline !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
             イベントを見る<span className="arr">→</span>
           </a>
         </div>
