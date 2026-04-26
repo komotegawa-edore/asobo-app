@@ -78,7 +78,7 @@ export default function Hero() {
 
         {/* Phones - CSS-based mockup */}
         <div className="flex flex-col items-center">
-        <div className="relative h-[290px] sm:h-[360px] lg:h-[420px] w-full flex justify-center items-center">
+        <div className="relative h-[290px] sm:h-[360px] lg:h-[440px] w-full flex justify-center items-center">
           {/* Phone Left: Profile */}
           <div className="phone absolute max-sm:-translate-x-[62px] sm:-translate-x-[82px] lg:-translate-x-[120px] -rotate-[8deg] translate-y-5 z-[2]">
             <div className="screen">
@@ -155,17 +155,23 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* People group — overlapping on PC (lg+) */}
+          <Image
+            src="/images/people/people_group1_full.png"
+            alt=""
+            width={320}
+            height={100}
+            className="hidden lg:block absolute -bottom-4 left-1/2 -translate-x-1/2 z-[4] drop-shadow-lg w-[300px]"
+          />
         </div>
-          {/* People group decoration — directly below phones */}
-          <div className="flex justify-center -mt-2 sm:mt-0">
-            <Image
-              src="/images/people/people_group1_full.png"
-              alt=""
-              width={320}
-              height={100}
-              className="drop-shadow-lg w-[200px] sm:w-[260px] lg:w-[300px]"
-            />
-          </div>
+        {/* People group — below phones on mobile/tablet */}
+        <Image
+          src="/images/people/people_group1_full.png"
+          alt=""
+          width={320}
+          height={100}
+          className="lg:hidden drop-shadow-lg w-[200px] sm:w-[260px] -mt-2 sm:mt-0"
+        />
         </div>
       </div>
     </section>
