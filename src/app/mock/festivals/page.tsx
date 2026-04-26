@@ -72,7 +72,7 @@ export default function FestivalsPage() {
 
       {/* Festival list - responsive grid */}
       <div className="flex-1 overflow-y-auto px-4 lg:px-6 pb-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map((f) => (
             <FestivalCard
               key={f.id}
