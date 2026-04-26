@@ -154,15 +154,18 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* People group decoration */}
-          <Image
-            src="/images/people/people_group1_full.png"
-            alt=""
-            width={320}
-            height={100}
-            className="absolute -bottom-2 sm:-bottom-4 left-1/2 -translate-x-1/2 z-[4] drop-shadow-lg w-[240px] sm:w-[320px]"
-          />
         </div>
+      </div>
+
+      {/* People group decoration — below phone mockups */}
+      <div className="flex justify-center mt-2 sm:mt-4 relative z-[2]">
+        <Image
+          src="/images/people/people_group1_full.png"
+          alt=""
+          width={320}
+          height={100}
+          className="drop-shadow-lg w-[240px] sm:w-[320px]"
+        />
       </div>
     </section>
   );
