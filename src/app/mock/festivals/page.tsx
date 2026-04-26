@@ -26,7 +26,7 @@ export default function FestivalsPage() {
   return (
     <>
       {/* Header */}
-      <div className="flex items-center justify-between px-4 lg:px-6 pt-4 pb-2">
+      <div className="flex items-center justify-between px-4 lg:px-6 pt-4 pb-2 shrink-0">
         <a href="/mock/festivals"><img src="/images/logo/text.png" alt="ASOBO" className="h-6 lg:hidden" /></a>
         <h2 className="hidden lg:block text-lg font-bold text-ink">ホーム</h2>
         <button className="w-9 h-9 rounded-full bg-cream flex items-center justify-center">
@@ -35,7 +35,7 @@ export default function FestivalsPage() {
       </div>
 
       {/* Search bar */}
-      <div className="px-4 lg:px-6 mb-3">
+      <div className="px-4 lg:px-6 mb-3 shrink-0">
         <div className="flex items-center gap-2 bg-cream rounded-full px-4 py-2.5 lg:max-w-md">
           <Search size={16} className="text-ink-mute" strokeWidth={2} />
           <span className="text-sm text-ink-mute">イベントを探す</span>
@@ -43,7 +43,7 @@ export default function FestivalsPage() {
       </div>
 
       {/* Category filter */}
-      <div className="flex gap-2 px-4 lg:px-6 mb-4 overflow-x-auto scrollbar-hide">
+      <div className="flex gap-2 px-4 lg:px-6 mb-4 overflow-x-auto scrollbar-hide shrink-0">
         {categories.map((cat) => {
           const active = activeCategory === cat.id;
           const Icon = iconMap[cat.icon];
