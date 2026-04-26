@@ -170,7 +170,7 @@ export default function Hero() {
           alt=""
           width={320}
           height={100}
-          className="lg:hidden drop-shadow-lg w-[200px] sm:w-[260px] -mt-2 sm:mt-0"
+          className="lg:hidden drop-shadow-lg w-[200px] sm:w-[260px] -mt-10 sm:-mt-12 relative z-[5]"
         />
         </div>
       </div>
