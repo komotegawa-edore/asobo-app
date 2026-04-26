@@ -1,26 +1,170 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --coral: #FF6B7A;
+  --coral-deep: #F0526A;
+  --peach: #FFB6A8;
+  --yellow: #FFD466;
+  --teal: #5FCFC1;
+  --lavender: #B8A6E8;
+  --sky: #7BC4E8;
+  --cream: #FFF8F1;
+  --paper: #FFFCF7;
+  --ink: #2B2533;
+  --ink-soft: #5C5466;
+  --ink-mute: #8B8395;
+  --line: #F0E6DC;
+  --shadow: 0 8px 24px -8px rgba(255, 107, 122, .18), 0 2px 6px rgba(43, 37, 51, .04);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-coral: var(--coral);
+  --color-coral-deep: var(--coral-deep);
+  --color-peach: var(--peach);
+  --color-yellow: var(--yellow);
+  --color-teal: var(--teal);
+  --color-lavender: var(--lavender);
+  --color-sky: var(--sky);
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-mute: var(--ink-mute);
+  --color-line: var(--line);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #FF8090 0%, var(--coral) 60%, var(--coral-deep) 100%);
+  color: #fff;
+  box-shadow: 0 6px 0 rgba(218, 69, 90, .45), 0 10px 24px -6px rgba(255, 107, 122, .5);
+}
+
+.btn-primary:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 rgba(218, 69, 90, .45), 0 8px 18px -6px rgba(255, 107, 122, .5);
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--coral);
+  border: 2px solid var(--coral);
+  box-shadow: 0 4px 0 rgba(255, 107, 122, .18);
+}
+
+.btn-outline:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(255, 107, 122, .18);
+}
+
+.btn .arr {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.btn-outline .arr {
+  background: #FFE9E9;
+  color: var(--coral);
+}
+
+/* ─── Phone Mockups ─── */
+.phone {
+  position: absolute;
+  width: 220px;
+  height: 460px;
+  background: #1A1622;
+  border-radius: 38px;
+  padding: 9px;
+  box-shadow: 0 30px 60px -20px rgba(43, 37, 51, .35), 0 8px 20px -8px rgba(43, 37, 51, .2);
+}
+
+.phone .screen {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.phone .notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 18px;
+  background: #1A1622;
+  border-radius: 999px;
+  z-index: 5;
+}
+
+/* ─── CTA section button overrides ─── */
+.cta-section .btn-primary {
+  background: #fff;
+  color: var(--coral-deep);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, .12), 0 10px 24px -6px rgba(0, 0, 0, .2);
+}
+
+.cta-section .btn-primary .arr {
+  background: #FFE9E9;
+  color: var(--coral);
+}
+
+.cta-section .btn-outline {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, .15);
+}
+
+.cta-section .btn-outline .arr {
+  background: rgba(255, 255, 255, .25);
+  color: #fff;
+}
+
+/* ─── Safety section dot pattern ─── */
+.safety-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(123, 196, 232, .07) 2px, transparent 2px);
+  background-size: 30px 30px;
 }
