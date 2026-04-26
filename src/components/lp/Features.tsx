@@ -41,7 +41,7 @@ export default function Features() {
         <h2 className="text-center text-[24px] sm:text-[30px] font-black mb-10">
           ASOBO<span className="text-coral">の特徴</span>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
           {features.map((f, i) => {
             const Icon = f.icon;
             return (

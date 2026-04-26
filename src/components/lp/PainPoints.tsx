@@ -29,7 +29,7 @@ export default function PainPoints() {
         <h2 className="text-center text-[24px] sm:text-[30px] font-black mb-9">
           こんなお悩み、ありませんか？
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mt-12">
           {pains.map((p, i) => {
             const Icon = p.icon;
             return (

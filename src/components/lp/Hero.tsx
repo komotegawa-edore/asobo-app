@@ -67,60 +67,90 @@ export default function Hero() {
             20〜30代の社会人向け / ユーザー投稿型でスタート
           </span>
           <div className="flex gap-3 sm:gap-4 flex-wrap justify-center lg:justify-start">
-            <a
-              href="#cta"
-              className="btn btn-primary !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]"
-            >
+            <a href="#cta" className="btn btn-primary !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
               無料ではじめる<span className="arr">→</span>
             </a>
-            <a
-              href="#genres"
-              className="btn btn-outline !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]"
-            >
+            <a href="#genres" className="btn btn-outline !py-3 sm:!py-4 !px-5 sm:!px-7 !text-[13px] sm:!text-[15px]">
               イベントを見てみる<span className="arr">→</span>
             </a>
           </div>
         </div>
 
-        {/* Phones */}
+        {/* Phones - CSS-based mockup */}
         <div className="relative h-[360px] sm:h-[440px] lg:h-[540px] flex justify-center items-center">
-          {/* Phone Left: Event Detail */}
-          <div
-            className="phone absolute z-[2] max-sm:-translate-x-[75px] sm:-translate-x-[100px] lg:-translate-x-[150px] -rotate-[8deg] translate-y-5"
-          >
+          {/* Phone Left: Profile */}
+          <div className="phone absolute max-sm:-translate-x-[75px] sm:-translate-x-[100px] lg:-translate-x-[150px] -rotate-[8deg] translate-y-5 z-[2]">
             <div className="screen">
-              <Image
-                src="/images/screens/event-detail.png"
-                alt="イベント詳細画面"
-                fill
-                className="object-cover object-top"
-              />
+              <div className="pt-[30px] px-3 pb-2 flex items-center gap-2 border-b border-[#F2EAE0]">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FFD9D2] to-[var(--peach)]" />
+                <div>
+                  <div className="text-[10px] font-bold">たくみ</div>
+                  <div className="text-[8px] text-ink-mute">28歳 / 東京</div>
+                </div>
+              </div>
+              <div className="h-[120px] sm:h-[140px] lg:h-[160px] bg-gradient-to-br from-[#FFD9D2] to-[var(--lavender)]" />
+              <div className="px-3 pt-2">
+                <div className="flex gap-1 mb-1">
+                  <span className="text-[8px] bg-[#FFF1E8] text-coral-deep px-2 py-0.5 rounded-full font-bold">ライブ</span>
+                  <span className="text-[8px] bg-[#FFF1E8] text-coral-deep px-2 py-0.5 rounded-full font-bold">フェス</span>
+                </div>
+                <p className="text-[9px] text-ink-soft leading-[1.5] m-0">邦ロック大好き。週末のフェス仲間募集中！</p>
+                <div className="text-[var(--yellow)] text-[9px] mt-1">★★★★★</div>
+              </div>
             </div>
           </div>
 
-          {/* Phone Center: Home */}
+          {/* Phone Center: Events */}
           <div className="phone absolute -translate-y-2.5 z-[3]">
             <div className="screen">
-              <Image
-                src="/images/screens/home.png"
-                alt="ホーム画面"
-                fill
-                className="object-cover object-top"
-              />
+              <div className="pt-[26px] pb-2 text-center">
+                <div className="text-[13px] font-black text-coral" style={{ fontFamily: "'Nunito', sans-serif" }}>ASOBO</div>
+              </div>
+              <div className="mx-3 h-[22px] bg-[#F4ECE2] rounded-full flex items-center px-2 text-[8px] text-ink-mute mb-2">🔍 イベントを探す</div>
+              <div className="px-3 flex flex-col gap-1.5">
+                {[
+                  { color: "from-[#7B5BB6] to-coral", badge: "LIVE", badgeBg: "bg-coral", title: "週末J-POPライブ", sub: "渋谷 / 4/30 ・参加4名" },
+                  { color: "from-[#FFB54A] to-[#FF8B5C]", badge: "フェス", badgeBg: "bg-[#FF8B5C]", title: "クラフトビールフェス", sub: "恵比寿 / 5/3 ・参加6名" },
+                  { color: "from-[#5FCFC1] to-[#3A9B8E]", badge: "スポーツ", badgeBg: "bg-[#3A9B8E]", title: "サッカー観戦オフ", sub: "国立 / 5/10 ・参加3名" },
+                  { color: "from-[#D8C9A8] to-[#A89878]", badge: "アート", badgeBg: "bg-[#A89878]", title: "現代アート展", sub: "六本木 / 5/14" },
+                ].map((ev, i) => (
+                  <div key={i} className="flex gap-2 items-center p-1.5 rounded-lg bg-paper border border-[#F4ECE2]">
+                    <div className={`w-9 h-9 rounded-lg shrink-0 bg-gradient-to-br ${ev.color}`} />
+                    <div>
+                      <span className={`text-[6px] ${ev.badgeBg} text-white px-1 py-px rounded font-bold inline-block mb-px`}>{ev.badge}</span>
+                      <div className="text-[8px] font-bold leading-[1.3]">{ev.title}</div>
+                      <div className="text-[7px] text-ink-mute">{ev.sub}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Phone Right: Chat */}
-          <div
-            className="phone absolute z-[2] max-sm:translate-x-[75px] sm:translate-x-[100px] lg:translate-x-[150px] rotate-[8deg] translate-y-5"
-          >
+          <div className="phone absolute max-sm:translate-x-[75px] sm:translate-x-[100px] lg:translate-x-[150px] rotate-[8deg] translate-y-5 z-[2]">
             <div className="screen">
-              <Image
-                src="/images/screens/chat.png"
-                alt="チャット画面"
-                fill
-                className="object-cover object-top"
-              />
+              <div className="pt-[26px] px-3 pb-2 flex items-center gap-2 border-b border-[#F2EAE0]">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#FFE0A8] to-[var(--peach)]" />
+                <div>
+                  <div className="text-[10px] font-bold">あゆか</div>
+                  <div className="text-[7px] text-ink-mute">オンライン</div>
+                </div>
+              </div>
+              <div className="p-2.5 flex flex-col gap-1.5">
+                <div className="text-[8px] py-1.5 px-2 rounded-xl rounded-bl-sm bg-[#F4ECE2] text-[var(--ink)] self-start max-w-[85%] leading-[1.4]">
+                  はじめまして！フェス一緒に行きませんか？☺
+                </div>
+                <div className="text-[8px] py-1.5 px-2 rounded-xl rounded-br-sm bg-coral text-white self-end max-w-[85%] leading-[1.4]">
+                  いいですね！<br />ぜひお願いします！
+                </div>
+                <div className="text-[8px] py-1.5 px-2 rounded-xl rounded-bl-sm bg-[#F4ECE2] text-[var(--ink)] self-start max-w-[85%] leading-[1.4]">
+                  日程あわせましょう〜🎵
+                </div>
+                <div className="text-[8px] py-1.5 px-2 rounded-xl rounded-br-sm bg-coral text-white self-end max-w-[85%] leading-[1.4]">
+                  わくわくしてきた！
+                </div>
+              </div>
             </div>
           </div>
 

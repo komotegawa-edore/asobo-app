@@ -37,7 +37,7 @@ export default function Safety() {
         <h2 className="text-center text-[24px] sm:text-[30px] font-black mb-2">
           安心して使える<span className="text-coral">仕組み</span>
         </h2>
-        <p className="text-center text-ink-soft text-sm mb-9">
+        <p className="text-center text-ink-soft text-sm mb-12">
           はじめての人でも、安心してイベント参加ができるように設計。
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

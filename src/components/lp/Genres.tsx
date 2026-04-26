@@ -41,33 +41,33 @@ export default function Genres() {
         <h2 className="text-center text-[24px] sm:text-[30px] font-black mb-3">
           人気の<span className="text-coral">イベントジャンル</span>
         </h2>
-        <p className="text-center text-ink-soft text-[13px] font-bold mb-8">
+        <p className="text-center text-ink-soft text-[13px] font-bold mb-10">
           <span className="text-coral">📍</span> まずは大阪エリアを中心にスタート予定
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {genres.map((g, i) => (
             <div
               key={i}
               className="rounded-2xl overflow-hidden border border-line bg-white"
               style={{ boxShadow: "var(--shadow)" }}
             >
-              <div className="h-[140px] relative">
+              <div className="h-[180px] sm:h-[160px] lg:h-[180px] relative overflow-hidden">
                 <Image
                   src={g.image}
                   alt={g.title}
                   fill
-                  className="object-cover"
+                  className="object-cover scale-110"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
                 <span
-                  className={`absolute left-2.5 bottom-2.5 bg-white px-3 py-1 rounded-md text-[11px] font-black ${g.badgeColor} z-[1]`}
+                  className={`absolute left-3 bottom-3 bg-white px-3 py-1 rounded-md text-[12px] font-black ${g.badgeColor} z-[1]`}
                 >
                   {g.badge}
                 </span>
               </div>
-              <div className="p-4">
-                <h4 className="text-[15px] font-black mb-1">{g.title}</h4>
-                <p className="text-xs text-ink-soft m-0 leading-[1.6]">
+              <div className="p-5">
+                <h4 className="text-[16px] font-black mb-1.5">{g.title}</h4>
+                <p className="text-[13px] text-ink-soft m-0 leading-[1.6]">
                   {g.desc}
                 </p>
               </div>

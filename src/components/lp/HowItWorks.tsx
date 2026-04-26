@@ -11,7 +11,7 @@ export default function HowItWorks() {
           使い方は<span className="text-coral">かんたん3ステップ</span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] gap-6 lg:gap-4 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] gap-6 lg:gap-4 items-stretch mt-14">
           {/* Step 1 */}
           <div
             className="bg-white rounded-[20px] p-6 px-5 border border-line relative"

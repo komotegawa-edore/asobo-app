@@ -31,7 +31,7 @@ export default function Recommend() {
         <h2 className="text-center text-[24px] sm:text-[30px] font-black mb-9">
           こんな人に<span className="text-coral">おすすめ</span>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-12">
           {recs.map((r, i) => (
             <div
               key={i}
