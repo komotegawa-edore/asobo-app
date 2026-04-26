@@ -18,9 +18,9 @@ export default function Sidebar() {
   return (
     <aside className="hidden lg:flex flex-col w-56 border-r border-line bg-white shrink-0 sticky top-0 h-dvh">
       {/* Logo */}
-      <div className="px-5 pt-6 pb-4">
+      <Link href="/mock/festivals" className="block px-5 pt-6 pb-4">
         <img src="/images/logo/text.png" alt="ASOBO" className="h-7" />
-      </div>
+      </Link>
 
       {/* Nav */}
       <nav className="flex flex-col gap-1 px-3 flex-1">

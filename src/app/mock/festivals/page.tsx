@@ -27,7 +27,7 @@ export default function FestivalsPage() {
     <>
       {/* Header */}
       <div className="flex items-center justify-between px-4 lg:px-6 pt-4 pb-2">
-        <img src="/images/logo/text.png" alt="ASOBO" className="h-6 lg:hidden" />
+        <a href="/mock/festivals"><img src="/images/logo/text.png" alt="ASOBO" className="h-6 lg:hidden" /></a>
         <h2 className="hidden lg:block text-lg font-bold text-ink">ホーム</h2>
         <button className="w-9 h-9 rounded-full bg-cream flex items-center justify-center">
           <Bell size={18} className="text-ink-soft" strokeWidth={2} />
