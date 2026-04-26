@@ -6,8 +6,8 @@ import { Home, Search, PlusCircle, MessageCircle, User } from "lucide-react";
 
 const navItems = [
   { href: "/mock/festivals", label: "ホーム", icon: Home, match: "/mock/festivals" },
-  { href: "/mock/festivals", label: "さがす", icon: Search, match: "" },
-  { href: "/mock/festivals", label: "とうこう", icon: PlusCircle, match: "" },
+  { href: "/mock/search", label: "さがす", icon: Search, match: "/mock/search" },
+  { href: "/mock/create", label: "とうこう", icon: PlusCircle, match: "/mock/create" },
   { href: "/mock/chats", label: "チャット", icon: MessageCircle, match: "/mock/chats" },
   { href: "/mock/profile", label: "マイページ", icon: User, match: "/mock/profile" },
 ];

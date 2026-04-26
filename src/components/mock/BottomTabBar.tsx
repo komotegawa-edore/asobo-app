@@ -6,8 +6,8 @@ import { Home, Search, PlusCircle, MessageCircle, User } from "lucide-react";
 
 const tabs = [
   { href: "/mock/festivals", label: "ホーム", icon: Home },
-  { href: "/mock/festivals", label: "さがす", icon: Search },
-  { href: "/mock/festivals", label: "とうこう", icon: PlusCircle },
+  { href: "/mock/search", label: "さがす", icon: Search },
+  { href: "/mock/create", label: "とうこう", icon: PlusCircle },
   { href: "/mock/chats", label: "チャット", icon: MessageCircle },
   { href: "/mock/profile", label: "マイページ", icon: User },
 ];
