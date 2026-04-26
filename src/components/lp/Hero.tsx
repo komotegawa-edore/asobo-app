@@ -161,7 +161,7 @@ export default function Hero() {
             alt=""
             width={320}
             height={100}
-            className="hidden lg:block absolute -bottom-4 left-1/2 -translate-x-1/2 z-[4] drop-shadow-lg w-[300px]"
+            className="hidden lg:block absolute -bottom-4 left-1/2 -translate-x-1/2 z-[4] drop-shadow-lg w-[300px] brightness-110 saturate-[1.15]"
           />
         </div>
         {/* People group — below phones on mobile/tablet */}
@@ -170,7 +170,7 @@ export default function Hero() {
           alt=""
           width={320}
           height={100}
-          className="lg:hidden drop-shadow-lg w-[200px] sm:w-[260px] mt-2 sm:mt-4"
+          className="lg:hidden drop-shadow-lg w-[200px] sm:w-[260px] mt-6 sm:mt-8 brightness-110 saturate-[1.15]"
         />
         </div>
       </div>
