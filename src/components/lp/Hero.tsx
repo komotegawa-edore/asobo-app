@@ -77,9 +77,10 @@ export default function Hero() {
         </div>
 
         {/* Phones - CSS-based mockup */}
-        <div className="relative h-[360px] sm:h-[440px] lg:h-[540px] flex justify-center items-center">
+        <div className="flex flex-col items-center">
+        <div className="relative h-[290px] sm:h-[360px] lg:h-[420px] w-full flex justify-center items-center">
           {/* Phone Left: Profile */}
-          <div className="phone absolute max-sm:-translate-x-[75px] sm:-translate-x-[100px] lg:-translate-x-[150px] -rotate-[8deg] translate-y-5 z-[2]">
+          <div className="phone absolute max-sm:-translate-x-[62px] sm:-translate-x-[82px] lg:-translate-x-[120px] -rotate-[8deg] translate-y-5 z-[2]">
             <div className="screen">
               <div className="pt-[30px] px-3 pb-2 flex items-center gap-2 border-b border-[#F2EAE0]">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FFD9D2] to-[var(--peach)]" />
@@ -128,7 +129,7 @@ export default function Hero() {
           </div>
 
           {/* Phone Right: Chat */}
-          <div className="phone absolute max-sm:translate-x-[75px] sm:translate-x-[100px] lg:translate-x-[150px] rotate-[8deg] translate-y-5 z-[2]">
+          <div className="phone absolute max-sm:translate-x-[62px] sm:translate-x-[82px] lg:translate-x-[120px] rotate-[8deg] translate-y-5 z-[2]">
             <div className="screen">
               <div className="pt-[26px] px-3 pb-2 flex items-center gap-2 border-b border-[#F2EAE0]">
                 <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#FFE0A8] to-[var(--peach)]" />
@@ -155,17 +156,17 @@ export default function Hero() {
           </div>
 
         </div>
-      </div>
-
-      {/* People group decoration — below phone mockups */}
-      <div className="flex justify-center mt-2 sm:mt-4 relative z-[2]">
-        <Image
-          src="/images/people/people_group1_full.png"
-          alt=""
-          width={320}
-          height={100}
-          className="drop-shadow-lg w-[240px] sm:w-[320px]"
-        />
+          {/* People group decoration — directly below phones */}
+          <div className="flex justify-center -mt-2 sm:mt-0">
+            <Image
+              src="/images/people/people_group1_full.png"
+              alt=""
+              width={320}
+              height={100}
+              className="drop-shadow-lg w-[200px] sm:w-[260px] lg:w-[300px]"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
